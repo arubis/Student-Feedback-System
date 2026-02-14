@@ -1,9 +1,13 @@
 from flask import Flask, render_template, request, redirect, url_for, session
 import sqlite3
+import os
 from werkzeug.security import generate_password_hash, check_password_hash
 
 app = Flask(__name__)
-app.secret_key = "secret123"  # for sessions
+# Load secret key from environment variable
+app.secret_key = os.environ.get('SECRET_KEY')
+if not app.secret_key:
+    raise ValueError("SECRET_KEY environment variable must be set")
 
 def get_db():
     return sqlite3.connect("feedback.db")
