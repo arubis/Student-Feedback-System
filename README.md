@@ -9,3 +9,6 @@ Full-stack Flask project with student login, admin login, and feedback managemen
    python app.py
 3. Open browser at:
    http://127.0.0.1:5000/
+
+
+<!-- Security scan triggered at 2026-08-31 17:00:39 -->
